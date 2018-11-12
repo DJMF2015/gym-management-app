@@ -10,6 +10,11 @@ get '/' do
   erb(:index)
 end
 
+not_found do
+  # 'This is nowhere to be found.'
+    erb(:error)
+end
+
 #FIND ALL
 get '/members' do
   @members = Member.all

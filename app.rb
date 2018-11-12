@@ -9,3 +9,7 @@ also_reload( './models/*' )
 get '/' do
   erb( :index )
 end
+
+not_found do
+  'This is nowhere to be found.'
+end

@@ -11,6 +11,10 @@ get '/' do
   erb(:index)
 end
 
+not_found do
+  erb(:error)
+end
+
 #FIND ALL
 get '/activities' do
   @activities = Activity.all

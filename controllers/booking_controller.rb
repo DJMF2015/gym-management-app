@@ -5,12 +5,16 @@ require_relative( '../models/member.rb' )
 require_relative( '../models/activity.rb' )
 require_relative( '../models/booking.rb' )
 
+not_found do
+  erb(:error)
+end
 
 get '/bookings' do
   @bookings = Booking.all
   @activities = Activity.all
   erb ( :"bookings/index" )
 end
+
 
 get '/bookings/new' do
   @members = Member.all
