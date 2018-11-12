@@ -1,0 +1,21 @@
+
+  <html>
+
+  <center><h2> Members listed: </h2>
+
+  <p>First: <%= @member.first_name %></p>
+  <p>Last: <%= @member.last_name %></p>
+  <p>Membership: <%= @member.membership %></p>
+
+
+  <b><form method="get" action="/members/<%= @member.id %>/edit">
+    <p><input type='submit' value="Update Film Details"/></p>
+  </form></b>
+
+  <form method="post" action="/members/<%= @member.id %>/delete">
+  <b>  <input type="submit" value="Delete"/></b>
+  </form>
+
+
+  </center>
+  </html>

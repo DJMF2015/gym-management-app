@@ -1,0 +1,44 @@
+<h2>Update Class Details</h2>
+<hr>
+<br>
+<form method="post" action="/activities/<%= @activity.id %>">
+
+
+  <label for="session">Class:</label>
+  <input
+  type="text"
+  name="session"
+  id="session"
+  value="<%= @activity.session %>"
+  />
+
+  <label for="spaces">Spaces:</label>
+  <input
+  type="text"
+  name="spaces"
+  id="spaces"
+  value="<%= @activity.spaces %>"
+  />
+
+  <label for="description">Description:</label>
+  <input type="text" name="description" id="description"
+  value="<%= @activity.description %>"/>
+
+  <label for="time_of_day">Time:</label>
+  <input
+  type="text"
+  name="time_of_day"
+  id="time_of_day"
+  value="<%= @activity.time_of_day %>"
+  />
+
+  <label for="duration">Duration:</label>
+  <input
+  type="text"
+  name="duration"
+  id="duration"
+  value="<%= @activity.duration %>"
+  />
+
+  <input type='submit' value="Update "/>
+</form>

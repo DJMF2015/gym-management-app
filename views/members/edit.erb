@@ -1,0 +1,32 @@
+<h2>Update Member Details</h2>
+
+<br>
+<form method="post" action="/members/<%= @member.id %>">
+
+  <label for="first_name">First Name:</label>
+  <input
+  type="text"
+  name="first_name"
+  id="first_name"
+  value="<%= @member.first_name %>"
+  />
+
+  <label for="last_name">Last Name:</label>
+  <input
+  type="text"
+  name="last_name"
+  id="last_name"
+  value="<%= @member.last_name %>"
+  />
+
+  <label for="membership">Membership:</label>
+  <select id= "membership" name="membership">
+
+    <% @types.each do |membership| %>
+    <option value="<%= membership %>" <%= 'selected' if @member.membership == membership %>><%= membership %></option>
+    <% end %>
+
+  </select>
+
+  <input type='submit' value="Update "/>
+</form>

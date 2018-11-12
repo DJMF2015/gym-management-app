@@ -1,0 +1,18 @@
+<h1>Add Member</h1>
+<hr>
+<form method="POST" action="/members" id="new_form">
+
+  <label for="first_name">First Name:</label>
+  <input type="text" name="first_name" id="first_name" maxlength="100"/>
+
+  <label for="last_name">Last Name:</label>
+  <input type="text" name="last_name" id="last_name" maxlength="100"/>
+
+  <label for="membership">Membership:</label>
+  <select name="membership"  id="membership">
+  <option value="Standard">Standard</option>
+  <option value="Premium">Premium</option>
+ </select>
+
+ <button type="submit" form="new_form">Add Member</button>
+</form>

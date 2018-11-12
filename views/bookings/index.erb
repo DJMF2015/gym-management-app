@@ -1,0 +1,14 @@
+<h2>Bookings</h2>
+
+<a href="/bookings/new">Create Booking</a>
+<br>
+
+<% for book in @bookings %>
+  <li>
+  <p><%= book.activity.session %><br>  <%= book.member.last_name %> </p>
+<% end %>
+
+<% for member in @members %>
+  <li>
+  <p><%= member.activity.session %><br>  <%= book.member.last_name %> </p>
+<% end %>

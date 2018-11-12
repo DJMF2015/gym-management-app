@@ -1,0 +1,26 @@
+<p><b>Activites </b></p>
+
+<br>
+
+<a href='/activities/new'>Add Classes</a>
+
+<% @activities.each do |activity| %>
+<p>Class</p>
+<%= activity.session %>
+<p>Description:</p>
+<%= activity.description %>
+<p>Time <%= activity.time_of_day %></p>
+<p>Spaces Available:</p>
+<%= activity.spaces %>
+<p>Duration of Class:</p>
+<%= activity.duration %>
+<br>
+<p><a href="/activities/<%= activity.id %>/edit"><h3>view</h3></a></p>
+  <br>
+  <form action="/activities/<%= activity.id %>/delete" method="POST">
+
+    <input type="submit" value="delete" />
+  </form>
+
+  <% end %>
+  <hr/>

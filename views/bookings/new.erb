@@ -1,0 +1,32 @@
+<h2>Bookings</h2>
+<hr>
+<form action="/bookings" method="post">
+  <div>
+    <h3>
+      <label for="members_id">Select member:</label>
+      <select name="members_id" id="members_id">
+        <% @members.each do |member| %>
+        <option value=<%= member.id %></option>
+        <%= member.first_name %> <%= member.last_name %></option>
+        <% end %>
+      </select>
+    </h3>
+  </div>
+  <hr>
+
+  <div>
+    <h3>
+      <label for="activities_id">Select activity:</label>
+      <select name="activities_id" id="activities_id">
+        <% @activities.each do |activity| %>
+        <option value=<%= activity.id %></option>
+        Class: <%= activity.session %> Duration: <%= activity.spaces %></option>
+
+        <% end %>
+      </select>
+    </h3>
+  </div>
+  <hr>
+<br>
+<center>  <input type="submit" value="Submit Booking"></center>
+</form>
