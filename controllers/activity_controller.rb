@@ -21,6 +21,7 @@ end
 # creating the :id as a string when searching. Avoid conversion error
 #CRETE
 get '/activities/new' do
+  @activities = Activity.all
   erb(:"activities/new")
 end
 

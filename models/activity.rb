@@ -8,7 +8,7 @@ class Activity
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @session = options['session']
-    @spaces = options['spaces']
+    @spaces = options['spaces'].to_i if options['spaces']
     @description = options['description']
     @time_of_day = options['time_of_day']
     @duration = options['duration']
@@ -73,19 +73,11 @@ class Activity
 
     #find classes available
     def upcoming_classes() #PASS
-      sql = "select activities.*, description from activities where id = $1"
+      sql = "select activities.* from activities where id = $1"
       values = [id]
       results = SqlRunner.run( sql, values )
       return Activity.new( results.first )
     end
-
-    # #find a certain member's classes that he/she is booked for OKAY/PASS
-    # def member_bookings()
-    #   sql= "SELECT  m.first_name, m.last_name , activities.session, activities.description, activities.id  FROM activities INNER JOIN bookings ON bookings.activities_id = activities.id INNER JOIN members m ON bookings.members_id = m.id WHERE m.id =$1 ORDER BY activities.id, m.last_name"
-    #   values = [@id]
-    #   result = SqlRunner.run(sql, values)
-    #   return result.map{|activity| Activity.new( activity)}
-    # end
 
     #find members for particualar activity PASS
     def members()
@@ -93,6 +85,24 @@ class Activity
       values = [@id]
       results = SqlRunner.run(sql, values)
       return results.map{ |member| Member.new(member)}
+    end
+
+
+    def count_members()
+      return members().count #count method returning no of members from sql query (above
+    end
+
+    def classes_available()
+      if @spaces > members().count
+        return true
+      else
+        return false
+      end
+    end
+
+    def self.activities_with_spaces()
+       all = all()
+    return  all.find_all { |activity| activity.classes_available() }
     end
 
     #Delete by ID

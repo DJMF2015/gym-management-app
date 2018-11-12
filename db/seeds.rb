@@ -70,7 +70,7 @@ activity3.save()
 
 activity4 = Activity.new({
         'session' => 'PurePump',
-        'spaces' => 8,
+        'spaces' => 2,
         "description" => "designed to develop your full body STRENGTH!",
          "time_of_day" => '14:30',
         "duration" => '60'
@@ -117,10 +117,12 @@ booking6.save()
 
 # activity2.find_customer_booking()
  activity1.upcoming_classes()
- member3.members()
+ # member3.members()
  member1.activities()
  booking1.member()
-p booking1.activity()
-
+ booking1.activity()
+  activity1.count_members
+  activity4.classes_available()
+# p  activity3.spaces_left()
 binding.pry
 nil

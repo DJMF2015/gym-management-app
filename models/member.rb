@@ -9,6 +9,7 @@ class Member
     @first_name = options['first_name']
     @last_name = options['last_name']
     @membership = options['membership']
+    # @max_slots = 10 #max no. of individuals per class
   end
 
   #CREATE
@@ -44,7 +45,7 @@ class Member
       WHERE id = $4"
       values = [@first_name, @last_name, @membership, @id]
       SqlRunner.run(sql, values)
-  end
+    end
 
     #READ/FIND ALL
     def self.all()
@@ -62,6 +63,7 @@ class Member
       results = SqlRunner.run( sql, values )
       return Member.new( results.first )
     end
+
 
     # find all upcoming classes a customer is booked for by id PASS
     def activities()
