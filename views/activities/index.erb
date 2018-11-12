@@ -15,8 +15,10 @@
 <p>Duration of Class:</p>
 <%= activity.duration %>
 <br>
-<p><a href="/activities/<%= activity.id %>/edit"><h3>view</h3></a></p>
-  <br>
+<p><a href="/activities/<%= activity.id %>/edit"><h3>Update</h3></a></p>
+
+  <p><a href="/activities/<%= activity.id %>/show">Show</a></p>
+
   <form action="/activities/<%= activity.id %>/delete" method="POST">
 
     <input type="submit" value="delete" />

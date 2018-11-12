@@ -25,9 +25,9 @@ get '/activities/new' do
 end
 
 # use params[:id] in the block that defines the route.
-get '/activities/:id' do  #   SHOW
+get '/activities/:id/show' do  #   SHOW
   @activity = Activity.find( params['id']) # or 'id'?
-  erb(:show)
+  erb(:"activities/show")
 end
 
 #sinatra reads top-down. update method accepts :id from create

@@ -9,7 +9,7 @@ also_reload( '../models/*' )
 
 get '/bookings' do
   @bookings = Booking.all
-    @activities = Activity.all
+  @activities = Activity.all
   erb ( :"bookings/index" )
 end
 
