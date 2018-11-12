@@ -79,18 +79,11 @@ class Activity
       return Activity.new( results.first )
     end
 
-    #find members for particualr activity PASS
-    def members()
-      sql = "SELECT m.* FROM members m INNER JOIN bookings b ON b.members_id = m.id WHERE b.activities_id = $1"
-       values = [@id]
-       results = SqlRunner.run(sql, values)
-       return results.map{ |member| Member.new(member)}
-    end
 
     #find a certain member's classes that he/she is booked for OKAY/PASS
-    def find_customer_booking()
-      sql= "SELECT activities.* , members.last_name, members.id FROM ACTIVITIES INNER JOIN bookings ON bookings.activities_id = activities.id INNER JOIN members ON BOOKINGS.members_id = members.id WHERE members.id = $1 ORDER BY activities.id ASC"
-       values = [@id]
+    def member_bookings()
+      sql= "SELECT  m.first_name, m.last_name , activities.session, activities.description, activities.id  FROM activities INNER JOIN bookings ON bookings.activities_id = activities.id INNER JOIN members m ON bookings.members_id = m.id WHERE m.id =$1 ORDER BY activities.id, m.last_name"
+      values = [@id]
       result = SqlRunner.run(sql, values)
       return result.map{|activity| Activity.new( activity)}
     end

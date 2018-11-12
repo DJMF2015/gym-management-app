@@ -117,7 +117,7 @@ booking6.save()
 
 # activity2.find_customer_booking()
  activity1.upcoming_classes()
- activity3.members()
+ member3.members()
  member1.activities()
  booking1.member()
 p booking1.activity()

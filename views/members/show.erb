@@ -1,21 +1,30 @@
 
-  <html>
+<html>
 
-  <center><h2> Members listed: </h2>
+<center><h2> Members listed: </h2>
 
   <p>First: <%= @member.first_name %></p>
   <p>Last: <%= @member.last_name %></p>
   <p>Membership: <%= @member.membership %></p>
+  <br>
 
 
   <b><form method="get" action="/members/<%= @member.id %>/edit">
-    <p><input type='submit' value="Update Film Details"/></p>
+    <p><input type='submit' value="Update Members Details"/></p>
   </form></b>
 
   <form method="post" action="/members/<%= @member.id %>/delete">
-  <b>  <input type="submit" value="Delete"/></b>
+    <b>  <input type="submit" value="Delete"/></b>
   </form>
 
+</center>
 
-  </center>
-  </html>
+<center><h3>
+  <% @member.activities.each do |mem| %>
+  <li><%= mem.session %> </li> <li><%= mem.id %></li>
+  <li><%= mem.duration %> </li> <li><%= mem.time_of_day %></li>
+</h3>
+<% end %>
+</center>
+
+</html>

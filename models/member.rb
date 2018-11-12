@@ -71,6 +71,15 @@ class Member
       return  result.map { |session| Activity.new( session) }
     end
 
+    #find members for particualr activity PASS
+    def members()
+      sql = "SELECT m.* FROM members m INNER JOIN bookings b ON b.members_id = m.id WHERE b.activities_id = $1"
+       values = [@id]
+       results = SqlRunner.run(sql, values)
+       return results.map{ |member| Member.new(member)}
+    end
+
+
     #Delete by ID
     def self.delete(id)
       sql = "DELETE FROM members where id = $1"
