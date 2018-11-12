@@ -1,8 +1,8 @@
 
 <html>
 
-<center
-><h2> Classes  </h2>
+<center>
+<h2> Classes  </h2>
 <hr>
 <p><%= @activity.session %></p>
 <p><%= @activity.spaces %></p>
@@ -12,10 +12,10 @@
 <br>
 
 <center><h3>
-  <% @activity.member_bookings.each do |member| %>
+  <% @activity.members.each do |member| %>
   <li><%= member.first_name %> </li> <li><%= member.last_name %></li>
   <li><%= member.id %></li>
-  <li><%= member.session %> </li> <li><%= member.description %></li>
+
 </h3>
 <% end %>
 </center>

@@ -51,15 +51,15 @@ class Activity
       WHERE id = $6"
       values = [@session, @spaces, @description,@time_of_day, @duration, @id]
       SqlRunner.run(sql, values)
-  end
+    end
 
-  #READ/FIND ALL
-  def self.all()
-    sql = "SELECT * FROM activities"
-    results = SqlRunner.run(sql)
-    classes = map_items(results)
-    return classes
-  end
+    #READ/FIND ALL
+    def self.all()
+      sql = "SELECT * FROM activities"
+      results = SqlRunner.run(sql)
+      classes = map_items(results)
+      return classes
+    end
 
 
     #FIND by id
@@ -71,7 +71,7 @@ class Activity
       return Activity.new( results.first )
     end
 
-#find classes available
+    #find classes available
     def upcoming_classes() #PASS
       sql = "select activities.*, description from activities where id = $1"
       values = [id]
@@ -79,13 +79,20 @@ class Activity
       return Activity.new( results.first )
     end
 
+    # #find a certain member's classes that he/she is booked for OKAY/PASS
+    # def member_bookings()
+    #   sql= "SELECT  m.first_name, m.last_name , activities.session, activities.description, activities.id  FROM activities INNER JOIN bookings ON bookings.activities_id = activities.id INNER JOIN members m ON bookings.members_id = m.id WHERE m.id =$1 ORDER BY activities.id, m.last_name"
+    #   values = [@id]
+    #   result = SqlRunner.run(sql, values)
+    #   return result.map{|activity| Activity.new( activity)}
+    # end
 
-    #find a certain member's classes that he/she is booked for OKAY/PASS
-    def member_bookings()
-      sql= "SELECT  m.first_name, m.last_name , activities.session, activities.description, activities.id  FROM activities INNER JOIN bookings ON bookings.activities_id = activities.id INNER JOIN members m ON bookings.members_id = m.id WHERE m.id =$1 ORDER BY activities.id, m.last_name"
+    #find members for particualar activity PASS
+    def members()
+      sql = "SELECT m.* FROM members m INNER JOIN bookings b ON b.members_id = m.id WHERE b.activities_id = $1"
       values = [@id]
-      result = SqlRunner.run(sql, values)
-      return result.map{|activity| Activity.new( activity)}
+      results = SqlRunner.run(sql, values)
+      return results.map{ |member| Member.new(member)}
     end
 
     #Delete by ID
@@ -105,4 +112,4 @@ class Activity
       return results.map { |classes|  Activity.new(classes) }
     end
 
-end
+  end
