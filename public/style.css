@@ -1,15 +1,21 @@
 
-#nav {
+nav {
 background: forestgreen;
 overflow: auto;
-
+color: white;
+display: flex;
+flex-direction: row;
 }
-#nav li {
+nav ul{
+  list-style: none;
+}
+nav li {
 float: left;
 padding: 10px;
-
-
 }
-#nav li:hover {
-background: white;
+nav a li:hover {
+background: blue;
+}
+nav a  {
+  color: white;
 }

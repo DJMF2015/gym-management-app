@@ -1,3 +1,4 @@
+
 <html>
 
 <center>
@@ -7,12 +8,10 @@
 <p><%= @activity.spaces %></p>
 <p><%= @activity.description %></p>
 <p><%= @activity.time_of_day %></p>
-<p><%= @activity.instructor %></p>
 <p><%= @activity.duration %></p>
 <br>
-<li><%= @instructor %> </li>
 
-<center>
+<center><h3>
   <% @activity.members.each do |member| %>
   <li><%= member.first_name %> </li> <li><%= member.last_name %></li>
   <li><%= member.id %></li>

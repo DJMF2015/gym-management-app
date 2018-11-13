@@ -3,13 +3,14 @@ require_relative( '../db/sql_runner' )
 
 class Activity
 
-  attr_accessor( :session, :spaces, :description, :time_of_day, :duration, :id )
+  attr_accessor( :session, :spaces, :description, :instructor, :time_of_day, :duration, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @session = options['session']
     @spaces = options['spaces'].to_i if options['spaces']
     @description = options['description']
+    @instructor = options['instructor']
     @time_of_day = options['time_of_day']
     @duration = options['duration']
   end
@@ -21,15 +22,16 @@ class Activity
       session,
       spaces,
       description,
+      instructor,
       time_of_day,
       duration
     )
     VALUES
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@session, @spaces, @description,@time_of_day, @duration]
+    values = [@session, @spaces, @description, @instructor, @time_of_day, @duration]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -42,14 +44,15 @@ class Activity
       session,
       spaces,
       description,
+      instructor,
       time_of_day,
       duration
       ) =
       (
-        $1, $2, $3, $4, $5
+        $1, $2, $3, $4, $5, $6
       )
-      WHERE id = $6"
-      values = [@session, @spaces, @description,@time_of_day, @duration, @id]
+      WHERE id = $7"
+      values = [@session, @spaces, @description, @instructor, @time_of_day, @duration, @id]
       SqlRunner.run(sql, values)
     end
 
@@ -59,6 +62,13 @@ class Activity
       results = SqlRunner.run(sql)
       classes = map_items(results)
       return classes
+    end
+
+
+    def self.random_instructor()
+      sql = "SELECT a.instructor FROM ACTIVITIES a order by RANDOM() limit 1"
+      results = SqlRunner.run( sql )
+      return results.first['instructor']
     end
 
 
@@ -86,6 +96,7 @@ class Activity
       results = SqlRunner.run(sql, values)
       return results.map{ |member| Member.new(member)}
     end
+
 
 
     def count_members()

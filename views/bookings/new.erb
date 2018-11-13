@@ -20,7 +20,9 @@
       <select name="activities_id" id="activities_id">
         <% @activities.each do |activity| %>
         <option value=<%= activity.id %></option>
-        Class: <%= activity.session %> Duration: <%= activity.spaces %></option>
+        Class: <%= activity.session %>
+        Duration: <%= activity.spaces %></option>
+    
 
         <% end %>
       </select>

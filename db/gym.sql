@@ -15,19 +15,15 @@ CREATE TABLE ACTIVITIES(
   session varchar(255),
   spaces INT4,
   description varchar(255),
+  instructor varchar(255),
   time_of_day varchar(255), --time of day e 10am
   duration varchar(255) --length of activity/class
 );
 
-CREATE TABLE INSTRUCTORS (
-  id serial8 primary key,
-  instructor_name varchar(255),
-  time_slot varchar(255)
-);
 
 CREATE TABLE BOOKINGS(
   id serial8 primary key,
   members_id INT8 REFERENCES members(id) ON DELETE CASCADE, --maintain referential integrity
   activities_id INT8 REFERENCES activities(id) ON DELETE CASCADE
-  instructor_id INT8 REFERENCES instructors(id) on delete CASCADE
+
 );

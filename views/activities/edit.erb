@@ -24,6 +24,16 @@
   <input type="text" name="description" id="description"
   value="<%= @activity.description %>"/>
 
+  <label for="instructor">Instructor:</label>
+  <select id= "instructor" name="instructor">
+
+    <% @instructor.each do |instruct| %>
+    <%= @activity.instructor %>"
+    <option value="<%= instruct %>" <%= 'selected' if @activity.instructor == instruct %>><%= instruct %></option>
+    <% end %>
+
+  </select>
+
   <label for="time_of_day">Time:</label>
   <input
   type="text"

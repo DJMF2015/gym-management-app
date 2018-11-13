@@ -32,11 +32,13 @@ end
 # use params[:id] in the block that defines the route.
 get '/activities/:id/show' do  #   SHOW
   @activity = Activity.find( params['id']) # or 'id'?
+  @instructor = Activity.random_instructor()
   erb(:"activities/show")
 end
 
 #sinatra reads top-down. update method accepts :id from create
 get '/activities/:id/edit' do #EDIT
+  @instructor = ['Joe Strongarms', 'Emily Hurst', 'Henry Faragon', 'George Elliot','Rachael Zskiofstoy']
   @activity = Activity.find(params[:id])
   erb (:"activities/edit")
 end
