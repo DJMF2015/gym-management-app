@@ -78,39 +78,79 @@ activity4 = Activity.new({
 
 activity4.save()
 # -----------------------------------
+
+instructor1 = Instructor.new({
+     'instructor_name' => 'Joe Strongarms',
+     'time_slot' => '09:00-10:00',
+  })
+  instructor1.save()
+   instructor2 = Instructor.new({
+       'instructor_name' => 'Joe Cotton',
+       'time_slot' => '09:00-10:00',
+    })
+    instructor2.save()
+
+   instructor3 = Instructor.new({
+         'instructor_name' => 'Henry ''The Destoyer'' Hard',
+         'time_slot' => '09:00-10:00',
+      })
+      instructor3.save()
+   instructor4 = Instructor.new({
+           'instructor_name' => 'Joe Strongarms',
+           'time_slot' => '10:00-11:00',
+        })
+      instructor4.save()
+   instructor5 = Instructor.new({
+             'instructor_name' => 'Emily Hurst',
+             'time_slot' => '13:00-14:00',
+          })
+      instructor5.save()
+
+   instructor6 = Instructor.new({
+               'instructor_name' => 'Magic Bob',
+               'time_slot' => '13:00-14:00',
+            })
+      instructor6.save()
+
 booking1 = Booking.new({
           "members_id" => member1.id,
-          "activities_id" => activity1.id
+          "activities_id" => activity1.id,
+          "instructor_id" => instructor1.id
         })
 booking1.save()
 
 booking2 = Booking.new({
           "members_id" => member2.id,
-          "activities_id" => activity2.id
+          "activities_id" => activity2.id,
+            "instructor_id" => instructor2.id
         })
 booking2.save()
 
 booking3 = Booking.new({
           "members_id" => member3.id,
-          "activities_id" => activity3.id
+          "activities_id" => activity3.id,
+            "instructor_id" => instructor3.id
         })
 booking3.save()
 
 booking4 = Booking.new({
           "members_id" => member4.id,
-          "activities_id" => activity4.id
+          "activities_id" => activity4.id,
+            "instructor_id" => instructor4.id
         })
 booking4.save()
 
 booking5 = Booking.new({
           "members_id" => member3.id,
-          "activities_id" => activity1.id
+          "activities_id" => activity1.id,
+            "instructor_id" => instructor5.id
         })
 booking5.save()
 
 booking6 = Booking.new({
           "members_id" => member1.id,
-          "activities_id" => activity4.id
+          "activities_id" => activity4.id,
+            "instructor_id" => instructor6.id
         })
 
 booking6.save()

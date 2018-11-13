@@ -1,0 +1,6 @@
+class Instructor
+
+
+
+
+end
