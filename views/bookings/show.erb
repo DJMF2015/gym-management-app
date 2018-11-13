@@ -13,8 +13,8 @@
 
 <center><h3>
   <% @activity.members.each do |member| %>
-  <li><%= member.first_name %> </li> <li><%= member.last_name %></li>
-  <li><%= member.id %></li>
+  <%= member.first_name %> <%= member.last_name %>
+  <%= member.id %>
 
 </h3>
 <% end %>

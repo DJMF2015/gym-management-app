@@ -1,22 +1,31 @@
+<html>
 <p><b>Current Members</b></p>
 
 <br>
+<body>
+  <a href='/members/new'>Add Member</a>
+  <!-- <img src="./london.jpeg"> -->
+  <% @members.each do |member| %>
+  <table class="alt">
+    <tr>
+      <th>First Name:</th>
+      <th>Last Name</th>
+      <th>Membership:</th>
+    </tr>
+    <tr>
+      <td><%= member.first_name %> </td>
+      <td><%= member.last_name %></td>
+      <td><%= member.membership %></td>
+    </table>
 
-<a href='/members/new'>Add Member</a>
+    <p><a href="/members/<%= member.id %>/edit">Update</a></p>
 
-<% @members.each do |member| %>
-<p>First Name</p>
-<%= member.first_name %>
-<p>Last Name</p>
-<%= member.last_name %>
-<p>Membership: <%= member.membership %></p>
-<p><a href="/members/<%= member.id %>/edit">Update</a></p>
+    <p><a href="/members/<%= member.id %>/show">Show</a></p>
 
-  <p><a href="/members/<%= member.id %>/show">Show</a></p>
-
-  <form action="/members/<%= member.id %>/delete" method="POST">
-    <input type="submit" value="delete" />
-  </form>
-
-  <% end %>
-  <hr/>
+    <form action="/members/<%= member.id %>/delete" method="POST">
+      <input type="submit" value="delete" />
+    </form>
+    <% end %>
+    <hr/>
+  </body>
+  </html>

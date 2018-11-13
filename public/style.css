@@ -1,21 +1,36 @@
 
 nav {
-background: forestgreen;
-overflow: auto;
-color: white;
-display: flex;
-flex-direction: row;
+  background: forestgreen;
+  overflow: auto;
+  color: white;
+  display: flex;
+  flex-direction: row;
 }
 nav ul{
   list-style: none;
 }
 nav li {
-float: left;
-padding: 10px;
+  float: left;
+  padding: 10px;
 }
 nav a li:hover {
-background: blue;
+  background: blue;
 }
 nav a  {
   color: white;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+table.alt tr:nth-child(even) {
+  background-color: #eee;
+}
+table.alt tr:nth-child(odd) {
+  background-color: #fff;
 }
