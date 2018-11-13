@@ -33,6 +33,8 @@ end
 get '/activities/:id/show' do  #   SHOW
   @activity = Activity.find( params['id']) # or 'id'?
   @instructor = Activity.random_instructor()
+  @temp = Activity.allocate_instructor_time_slots()
+  @next_week = Activity.allocate_next_week()
   erb(:"activities/show")
 end
 

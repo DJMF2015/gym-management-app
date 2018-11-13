@@ -1,24 +1,26 @@
 <html>
 
 <center>
-<h2> Classes  </h2>
-<hr>
-<p><%= @activity.session %></p>
-<p><%= @activity.spaces %></p>
-<p><%= @activity.description %></p>
-<p><%= @activity.time_of_day %></p>
-<p><%= @activity.instructor %></p>
-<p><%= @activity.duration %></p>
-<br>
-<li><%= @instructor %> </li>
+  <h2> Classes  </h2>
+  <hr>
+  <p><%= @activity.session %></p>
+  <p><%= @activity.spaces %></p>
+  <p><%= @activity.description %></p>
+  <p><%= @activity.time_of_day %></p>
+  <p><%= @activity.instructor %></p>
+  <p><%= @activity.duration %></p>
+  <br>
+  <h2><%= @temp %></h2>
+  <h3> <%= @next_week %></h3>
+  <li><%= @instructor %> </li>
 
-<center>
-  <% @activity.members.each do |member| %>
-  <li><%= member.first_name %> </li> <li><%= member.last_name %></li>
-  <li><%= member.id %></li>
+  <center>
+    <% @activity.members.each do |member| %>
+    <li><%= member.first_name %> </li> <li><%= member.last_name %></li>
+    <li><%= member.id %></li>
 
-</h3>
-<% end %>
+  </h3>
+  <% end %>
 </center>
 <br>
 

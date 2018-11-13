@@ -74,7 +74,7 @@ activity3.save()
 
 activity4 = Activity.new({
         'session' => 'PurePump',
-        'spaces' => 2,
+        'spaces' => 3,
         "description" => "designed to develop your full body STRENGTH!",
          'instructor' => 'Magic Bob',
          "time_of_day" => '14:30',
@@ -160,15 +160,16 @@ booking6 = Booking.new({
 
 booking6.save()
 
-# activity2.find_customer_booking()
+ # activity2.find_customer_booking()
  activity1.upcoming_classes()
  # member3.members()
  member1.activities()
  booking1.member()
  booking1.activity()
-  activity1.count_members
-  activity4.classes_available()
+ activity1.count_members
+ activity4.classes_available()
 # p  activity3.spaces_left()
-p activity2.instructor
+# p activity2.instructor
+p activity1.allocate_instructor_time_slots()
 binding.pry
 nil

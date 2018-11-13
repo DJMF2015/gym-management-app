@@ -1,5 +1,5 @@
 require_relative( '../db/sql_runner' )
-
+require 'Date'
 
 class Activity
 
@@ -97,12 +97,27 @@ class Activity
       return results.map{ |member| Member.new(member)}
     end
 
+#helper method to allocate a future time slot to instructor
+    def self.allocate_instructor_time_slots()
+      now = Time.now
+      future = now + 3600
+      future.strftime('%H:%M')
+      @time_of_day = future
+      return  @time_of_day.strftime('%H:%M')
+    end
 
+#helper method to allocate a future day slot 5 days from present to instructor
+    def self.allocate_next_week()
+      @next = Date.today + 5
+      return @next
+    end
 
+#count number of members
     def count_members()
       return members().count #count method returning no of members from sql query (above
     end
 
+ 
     def classes_available()
       if @spaces > members().count
         return true
@@ -112,8 +127,8 @@ class Activity
     end
 
     def self.activities_with_spaces()
-       all = all()
-    return  all.find_all { |activity| activity.classes_available() }
+      all = all()
+      return  all.find_all { |activity| activity.classes_available() }
     end
 
     #Delete by ID
