@@ -2,18 +2,26 @@
 <body>
   <center>
 
-<p> Class Created </p>
-<hr>
-<p><%= @activity.session %></p>
-<p><%= @activity.spaces %></p>
-<p><%= @activity.description %></p>
-<p><%= @activity.time_of_day %></p>
-<p><%= @activity.duration %></p>
-<br><li><%= @instructor %> </li>
-<p><%= Time.now() %></p>
+    <p> Class Created </p>
+    <hr><center><table class="alt">
+      <tr>
+        <th> Activity: </th>
+        <th> Spaces: </th>
+        <th> Description: </th>
+        <th> Time: </th>
+        <th> Instructor: </th></tr>
+        <tr>
+          <td><%= @activity.session %></td>
+          <td><%= @activity.spaces %></td>
+          <td><%= @activity.description %></td>
+          <td><%= @activity.time_of_day %></td>
+          <br><td><%= @instructor %> <td>
+          </tr>
 
-<hr>
 
-</center>
-</body>
-</html>
+
+          <hr>
+        </table>
+      </center>
+    </body>
+    </html>

@@ -1,14 +1,27 @@
-<h2>Bookings</h2>
+<html>
+<center><h2>Bookings</h2></center>
+<body>
+  <center><a href="/bookings/new">Create Booking</a></center>
+  <br>
+  <table class="alt">
+    <tr>
+      <th>Activity:</th>
+      <th>Member firstname</th>
+      <th>Member Surname</th>
+      <th>Membership</th>
+    </tr>
+    <tr>
+      <% for book in @bookings %>
+      <td><%= book.activity.session %></td>
+      <td> <%= book.member.first_name %></td>
+      <td> <%= book.member.last_name %></td>
+      <td> <%= book.member.membership %></td>
+    </tr>
+    <% end %>
+  </table>
 
-<a href="/bookings/new">Create Booking</a>
-<br>
-
-<% for book in @bookings %>
-
-  <p><%= book.activity.session %><br>  <%= book.member.last_name %> </p>
-
-<% end %>
-
-<form method="post" action="/bookings/<%= book.id %>/delete">
- <input type="submit" value="Delete"/>
-</form>
+  <form method="post" action="/bookings/<%= book.id %>/delete">
+    <input type="submit" value="Delete"/>
+  </form>
+</body>
+</html>

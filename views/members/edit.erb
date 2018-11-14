@@ -3,7 +3,7 @@
 <br>
 <form method="post" action="/members/<%= @member.id %>">
 
-  <label for="first_name">First Name:</label>
+  <b><label for="first_name">First Name:</label></b>
   <input
   type="text"
   name="first_name"
@@ -11,7 +11,7 @@
   value="<%= @member.first_name %>"
   />
 
-  <label for="last_name">Last Name:</label>
+  <b><label for="last_name">Last Name:</label></b>
   <input
   type="text"
   name="last_name"
@@ -19,7 +19,7 @@
   value="<%= @member.last_name %>"
   />
 
-  <label for="membership">Membership:</label>
+  <label for="membership">Membership:</label></b>
   <select id= "membership" name="membership">
 
     <% @types.each do |membership| %>

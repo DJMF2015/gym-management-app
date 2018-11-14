@@ -1,30 +1,34 @@
-<p><b>Activites </b></p>
-
-<br>
-
-<a href='/activities/new'>Add Classes</a>
-
-<% @activities.each do |activity| %>
-<p>Class</p>
-<%= activity.session %>
-<p>Description:</p>
-<%= activity.description %>
-<p>Instructor:</p>
-<p><%= activity.instructor %></p>
-<p>Time <%= activity.time_of_day %></p>
-<p>Spaces Available:</p>
-<%= activity.spaces %>
-<p>Duration of Class:</p>
-<%= activity.duration %>
-<br>
-<p><a href="/activities/<%= activity.id %>/edit"><h3>Update</h3></a></p>
-
-  <p><a href="/activities/<%= activity.id %>/show">Show</a></p>
-
-  <form action="/activities/<%= activity.id %>/delete" method="POST">
-
+<h3>Activites </h3>
+<br><br>
+<center><a href='/activities/new'>Add Classes</a></center>
+<hr>
+<center><table class="alt">
+  <tr>
+    <th> Activity: </th>
+    <th> Description </th>
+    <th> Instructor: </th>
+    <th> Time: </th>
+    <th> Spaces: </th>
+    <th> Duration: </th>
+  </tr>
+  <tr>
+    <% @activities.each do |activity| %>
+    <td><%= activity.session %></td>
+    <td><%= activity.description %>
+      <td><%= activity.instructor %></td>
+      <td><%= activity.time_of_day %></td>
+      <td><%= activity.spaces %></td>
+      <td><%= activity.duration %></td>
+    </tr>
+  </table></center>
+  <br>
+  <center><a href="/activities/<%= activity.id %>/edit"><h3>Update</h3></a></center>
+  <br><br>
+  <center>  <a href="/activities/<%= activity.id %>/show">Show</a></center>
+  <form method="post action="/activities/<%= activity.id %>/delete" method="POST">
     <input type="submit" value="delete" />
   </form>
-
   <% end %>
   <hr/>
+
+  </html>

@@ -1,28 +1,38 @@
-
+/* *{
+  margin: 0 auto;
+} */
+body{
+  font-family: 'Ubuntu';font-size: 18px;
+}
+h1, h2, h3{
+  font-size: 20px;
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  text-align: center;
+}
 nav {
   background: forestgreen;
   overflow: auto;
   color: white;
   display: flex;
   flex-direction: row;
-  padding: 4px 250px;
+  padding: 5px 300px 5px 75px;
 }
 nav ul{
   list-style: none;
 }
 nav li {
   float: left;
-  padding: 2px 20px;
+  padding: 5px 30px;
 }
-nav a li:hover {
-  background: blue;
-}
+
 nav a  {
   color: white;
   text-align: center;
   font-size: 22px;
   font-family:  sans-serif;
   font-weight: normal;
+
 }
 
 table {
@@ -45,7 +55,7 @@ footer{
   bottom: 0;
   position: fixed;
   width: 100%;
- text-align:center;
+  text-align:center;
 }
 
 .footer {

@@ -5,9 +5,6 @@ require_relative( '../models/member.rb' )
 require_relative( '../models/activity.rb' )
 require_relative( '../models/booking.rb' )
 
-not_found do
-    erb(:error)
-end
 
 get '/' do
   erb(:index)
@@ -58,4 +55,8 @@ end
 post '/members/:id/delete' do
   Member.delete(params[:id])
   redirect to("/members")
+end
+
+not_found do
+    erb(:error)
 end

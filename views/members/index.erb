@@ -1,10 +1,9 @@
 <html>
-<p><b>Current Members</b></p>
+<center><h1>Current Members</h1></center>
 
-<br>
 <body>
-  <a href='/members/new'>Add Member</a>
-  <!-- <img src="./london.jpeg"> -->
+  <center><a href='/members/new'>Add Member</a>  </center>
+  <br>
   <% @members.each do |member| %>
   <table class="alt">
     <tr>
@@ -17,11 +16,11 @@
       <td><%= member.last_name %></td>
       <td><%= member.membership %></td>
     </table>
-
-    <p><a href="/members/<%= member.id %>/edit">Update</a></p>
-
-    <p><a href="/members/<%= member.id %>/show">Show</a></p>
-
+    <br>
+    <center><a href="/members/<%= member.id %>/edit">UPDATE</a> </center>
+    <br>
+    <center><a href="/members/<%= member.id %>/show">SHOW</a></center>
+    <br>
 
     <% end %>
     <hr/>

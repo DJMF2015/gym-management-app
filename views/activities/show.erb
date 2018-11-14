@@ -3,35 +3,48 @@
 <center>
   <h2> Classes  </h2>
   <hr>
-  <p><%= @activity.session %></p>
-  <p><%= @activity.spaces %></p>
-  <p><%= @activity.description %></p>
-  <p><%= @activity.time_of_day %></p>
-  <p><%= @activity.instructor %></p>
-  <p><%= @activity.duration %></p>
-  <br>
-  <h2><%= @temp %></h2>
+  <table class="alt">
+    <tr>
+      <th> Activity: </th>
+      <th> Spaces: </th>
+      <th> Description: </th>
+      <th> Time: </th>
+      <th> Instructor: </th>
+      <th> Duration: </th>
+    </tr>
+    <tr>
+      <td><%= @activity.session %></td>
+      <td><%= @activity.spaces %></td>
+      <td><%= @activity.description %></td>
+      <td><%= @activity.time_of_day %></td>
+      <td><%= @activity.instructor %></td>
+      <td><%= @activity.duration %></td>
 
-  <li><%= @instructor %> </li>
+      <td<%= @temp %></td>
 
-  <center>
-    <% @activity.members.each do |member| %>
-    <li><%= member.first_name %> </li> <li><%= member.last_name %></li>
-    <li><%= member.id %></li>
+      <td><%= @instructor %> </td>
 
-  </h3>
-  <% end %>
-</center>
-<br>
+    </tr></table><br><br>
+    <table class="alt">
+      <tr>
+        <th> First Name: </th>
+        <th> Last Name: </th>
+      </tr>
+      <center>
+        <% @activity.members.each do |member| %>
+        <td><%= member.first_name %> </td> <td><%= member.last_name %></td>
+        <% end %>
+      </table>
+      <br>
 
-<b><form method="get" action="/activities/<%= @activity.id %>/edit">
-  <p><input type='submit' value="Update Class Details"/></p>
-</form></b>
+      <form method="get" action="/activities/<%= @activity.id %>/edit">
+        <input type='submit' value="Update Class Details"/>
+      </form>
 
-<form method="post" action="/activities/<%= @activity.id %>/delete">
-  <b>  <input type="submit" value="Delete"/></b>
-</form>
+      <form method="post" action="/activities/<%= @activity.id %>/delete">
+        <b>  <input type="submit" value="Delete"/>
+        </form>
 
 
-</center>
-</html>
+
+        </html>

@@ -1,9 +1,11 @@
-<h2>Bookings</h2>
+<html>
+<h1>Bookings</h1>
 <hr>
+<body>
 <form action="/bookings" method="post">
   <div>
     <h3>
-      <label for="members_id">Select member:</label>
+      <label for="members_id">Select Member:</label>
       <select name="members_id" id="members_id">
         <% @members.each do |member| %>
         <option value=<%= member.id %></option>
@@ -14,7 +16,7 @@
   </div>
   <div>
     <h3>
-      <label for="activities_id">Select activity:</label>
+      <label for="activities_id">Select Activity:</label>
       <select name="activities_id" id="activities_id">
         <% @activities.each do |activity| %>
         <option value=<%= activity.id %></option>
@@ -28,3 +30,5 @@
   <br>
   <center>  <input type="submit" value="Submit Booking"></center>
 </form>
+</body>
+</html>
