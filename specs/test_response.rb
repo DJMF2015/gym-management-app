@@ -10,7 +10,7 @@ class ConnectTest < Test::Unit::TestCase
   end
 
   def response()
-    puts response.code
+    p response.code
 
     # worker = Fetcher::Worker.new
     # txt = worker.write( 'http://localhost:4567/members.txt' )

@@ -100,16 +100,15 @@ class Activity
 #helper method to allocate a future time slot to instructor
     def self.allocate_instructor_time_slots()
       now = Time.now
-      future = now + 3600
-      future.strftime('%H:%M')
-      @time_of_day = future
-      return  @time_of_day.strftime('%H:%M')
+      future = now
+      future.strftime('%H:%M:%p')
+      @time_of_day = future + (60*60*24*7)
+      return  @time_of_day.strftime('Class Booked for: %A, %B %C, %G @ %H:%M %p')
     end
-
-#helper method to allocate a future day slot 5 days from present to instructor
+#helper method to allocate a future day slot 7 days from present to instructor
     def self.allocate_next_week()
-      @next = Date.today + 5
-      return @next
+      @next = Date.today
+      return  @next
     end
 
 #count number of members
@@ -117,7 +116,7 @@ class Activity
       return members().count #count method returning no of members from sql query (above
     end
 
- 
+
     def classes_available()
       if @spaces > members().count
         return true
@@ -131,6 +130,7 @@ class Activity
       return  all.find_all { |activity| activity.classes_available() }
     end
 
+  
     #Delete by ID
     def self.delete(id)
       sql = "DELETE FROM activities where id = $1"
