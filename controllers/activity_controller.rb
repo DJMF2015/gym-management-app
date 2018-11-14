@@ -7,13 +7,14 @@ require_relative( '../models/booking.rb' )
 also_reload( '../models/*' )
 
 
+not_found do
+  erb(:error)
+end
+
 get '/' do
   erb(:index)
 end
 
-not_found do
-  erb(:error)
-end
 
 #FIND ALL
 get '/activities' do

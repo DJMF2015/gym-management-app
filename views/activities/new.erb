@@ -1,26 +1,33 @@
-<h1>Add Class</h1>
+
+<html><h1>Add Class</h1>
 <hr>
 <form method="POST" action="/activities">
 
-  <label for="session">Session:</label>
-  <input type="text" name="session" id="session"/>
+
+  <label for="session">Select Activity:</label>
+  <select name="session" id="session" required="required" >
+    <% @activities.each do |sess| %>
+    <option value=<%= sess.id %></option>
+    <%= sess.session %> </option>
+    <% end %>
+  </select>
+
 
   <label for="spaces">Spaces:</label>
-  <input type="number" name="spaces" id="spaces"/>
-
+  <br><br>
+  <input type="number" name="spaces" id="spaces" required="required"  min="0"/>
+  <br>
   <label for="description">Description:</label>
-  <input type="text" name="description" id="description"/>
+  <input type="text" name="description" id="description" maxlength="30" />
 
-  <label for="duration">Duration:</label>
-  <input type="text" name="duration" id="duration"/>
-
-  <!-- <label for="instructor">Instructor</label>
-  <input type="text" name="instructor" id="instructor" -->
-
-  <label for="time_of_day">Time :</label>
-  <input type="text" name="time_of_day" id="time_of_day"/>
+  <label for="duration">Duration:</label><br>
+  <input type="number" name="duration" id="duration" required="required" min="0"/>
+  <br><br>
+  <label for="time_of_day">Time :</label><br>
+  <input type="time" name="time_of_day" id="time_of_day" required="required"/>
 
 
   <input type="submit" value="Add Class"/>
 
 </form>
+</html>

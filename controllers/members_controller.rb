@@ -5,14 +5,14 @@ require_relative( '../models/member.rb' )
 require_relative( '../models/activity.rb' )
 require_relative( '../models/booking.rb' )
 
+not_found do
+    erb(:error)
+end
 
 get '/' do
   erb(:index)
 end
 
-not_found do
-    erb(:error)
-end
 
 #FIND ALL
 get '/members' do

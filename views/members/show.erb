@@ -8,6 +8,13 @@
   <p>Membership: <%= @member.membership %></p>
   <br>
 
+  <center><h3>
+    <% @member.activities.each do |mem| %>
+    <li><%= mem.session %> </li> <li><%= mem.id %></li>
+    <li><%= mem.duration %> </li> <li><%= mem.time_of_day %></li>
+  </h3>
+  <% end %>
+  </center>
 
   <b><form method="get" action="/members/<%= @member.id %>/edit">
     <p><input type='submit' value="Update Members Details"/></p>
@@ -19,12 +26,6 @@
 
 </center>
 
-<center><h3>
-  <% @member.activities.each do |mem| %>
-  <li><%= mem.session %> </li> <li><%= mem.id %></li>
-  <li><%= mem.duration %> </li> <li><%= mem.time_of_day %></li>
-</h3>
-<% end %>
-</center>
+
 
 </html>

@@ -7,13 +7,11 @@
       <select name="members_id" id="members_id">
         <% @members.each do |member| %>
         <option value=<%= member.id %></option>
-        <%= member.first_name %> <%= member.last_name %></option>
+        <%= member.first_name %> <%= member.last_name %>
         <% end %>
       </select>
     </h3>
   </div>
-  <hr>
-
   <div>
     <h3>
       <label for="activities_id">Select activity:</label>
