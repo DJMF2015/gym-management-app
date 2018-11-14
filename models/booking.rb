@@ -35,7 +35,6 @@ class Booking
     return hash
   end
 
-
   #FIND by id
   def self.find( id )
     sql = "SELECT * FROM bookings
@@ -67,11 +66,11 @@ class Booking
     results = SqlRunner.run(sql, values)
     return Member.new(results.new)
   end
- 
- def check_membership()
-  type = premium?()
-  # if Member.membership ==
- end
+
+ # def check_membership()
+ #  type = premium?()
+ #  # if Member.membership ==
+ # end
 
   #Delete by ID
   def self.delete(id)

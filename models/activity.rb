@@ -130,7 +130,7 @@ class Activity
       return  all.find_all { |activity| activity.classes_available() }
     end
 
-  
+
     #Delete by ID
     def self.delete(id)
       sql = "DELETE FROM activities where id = $1"

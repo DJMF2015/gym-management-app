@@ -34,3 +34,15 @@ table.alt tr:nth-child(even) {
 table.alt tr:nth-child(odd) {
   background-color: #fff;
 }
+footer {
+  bottom: 0 ;
+  position: absolute;
+  padding-right: 20px;
+}
+.bookingForm {
+   display: inline-flex;
+   background: beige;
+   justify:
+   padding: 30px;
+   margin: 20px auto;
+ }
