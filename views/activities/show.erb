@@ -25,7 +25,7 @@
       <td><%= @instructor %> </td>
 
     </tr></table><br><br>
-
+     <center><h2> Member  </h2></center>
     <center>
       <% @activity.members.each do |member| %>
       <table class="alt">
@@ -37,7 +37,7 @@
         <% end %>
       </table>
       <br>
-
+<%= @temp %>
       <b><form method="get" action="/activities/<%= @activity.id %>/edit">
         <p><input type='submit' value="Update Class Details"/></p>
       </form></b>
