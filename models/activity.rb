@@ -64,7 +64,7 @@ class Activity
       return classes
     end
 
-
+    #select 1 random instructor
     def self.random_instructor()
       sql = "SELECT a.instructor FROM ACTIVITIES a order by RANDOM() limit 1"
       results = SqlRunner.run( sql )
@@ -97,7 +97,7 @@ class Activity
       return results.map{ |member| Member.new(member)}
     end
 
-#helper method to allocate a future time slot to instructor
+    #helper method to allocate a future time slot to instructor
     def self.allocate_instructor_time_slots()
       now = Time.now
       future = now
@@ -105,13 +105,14 @@ class Activity
       @time_of_day = future + (60*60*24*7)
       return  @time_of_day.strftime('Class Booked for: %A, %B %C, %G @ %H:%M %p')
     end
-#helper method to allocate a future day slot 7 days from present to instructor
+
+    #helper method to allocate a future day slot 7 days from present to instructor
     def self.allocate_next_week()
       @next = Date.today
       return  @next
     end
 
-#count number of members
+    #count number of members
     def count_members()
       return members().count #count method returning no of members from sql query (above
     end
@@ -129,7 +130,6 @@ class Activity
       all = all()
       return  all.find_all { |activity| activity.classes_available() }
     end
-
 
     #Delete by ID
     def self.delete(id)

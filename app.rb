@@ -11,5 +11,5 @@ get '/' do
 end
 
 not_found do
-  'This is nowhere to be found.'
+  erb(:error)
 end

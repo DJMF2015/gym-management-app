@@ -1,10 +1,10 @@
 a:link, a:visited {
     background-color:  #006646;
     color: white;
-    padding: 9px  40px;
+    padding: 12px  25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     border-radius: 15px;
-    width: 80%;
+    width: 65%;
 }

@@ -11,24 +11,26 @@
     <th> Spaces: </th>
     <th> Duration: </th>
   </tr>
+
+  <% @activities.each do |activity| %>
   <tr>
-    <% @activities.each do |activity| %>
     <td><%= activity.session %></td>
     <td><%= activity.description %>
       <td><%= activity.instructor %></td>
       <td><%= activity.time_of_day %></td>
       <td><%= activity.spaces %></td>
       <td><%= activity.duration %></td>
+      <td><a href="/activities/<%= activity.id %>/edit">Update</a></td>
+      
+      <td> <a href="/activities/<%= activity.id %>/show">Show</a></td>
+      <td><form method="post action="/activities/<%= activity.id %>/delete" method="POST">
+        <input type="submit" value="delete" />
+      </form></td>
     </tr>
+
+
+    <% end %>
   </table></center>
-  <br>
-  <center><a href="/activities/<%= activity.id %>/edit"><h3>Update</h3></a></center>
-  <br><br>
-  <center>  <a href="/activities/<%= activity.id %>/show">Show</a></center>
-  <form method="post action="/activities/<%= activity.id %>/delete" method="POST">
-    <input type="submit" value="delete" />
-  </form>
-  <% end %>
   <hr/>
 
   </html>

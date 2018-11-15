@@ -170,6 +170,6 @@ booking6.save()
  activity4.classes_available()
 # p  activity3.spaces_left()
 # p activity2.instructor
- p Activity.allocate_instructor_time_slots
+p Activity.allocate_instructor_time_slots
 binding.pry
 nil
