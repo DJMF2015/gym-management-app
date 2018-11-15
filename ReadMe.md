@@ -35,6 +35,6 @@ Talk through your ideas with an instructor during the planning process, and befo
  - [X]  The app should show all members that are registered for a particular class Y
  -
 ## Possible Extensions
-- Classes could have a maximum capacity, and users can only be added while there is space remaining.
+ - [x] Classes could have a maximum capacity, and users can only be added while there is space remaining.
 - The gym could be able to give its members Premium or Standard membership. Standard members can only be signed up for classes during off-peak hours.
 - anything else...
