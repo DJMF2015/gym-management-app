@@ -25,26 +25,27 @@
       <td><%= @instructor %> </td>
 
     </tr></table><br><br>
-    <table class="alt">
-      <tr>
-        <th> First Name: </th>
-        <th> Last Name: </th>
-      </tr>
-      <center>
-        <% @activity.members.each do |member| %>
+
+    <center>
+      <% @activity.members.each do |member| %>
+      <table class="alt">
+        <tr>
+          <th> First Name: </th>
+          <th> Last Name: </th>
+        </tr>
         <td><%= member.first_name %> </td> <td><%= member.last_name %></td>
         <% end %>
       </table>
       <br>
 
-      <form method="get" action="/activities/<%= @activity.id %>/edit">
-        <input type='submit' value="Update Class Details"/>
-      </form>
+      <b><form method="get" action="/activities/<%= @activity.id %>/edit">
+        <p><input type='submit' value="Update Class Details"/></p>
+      </form></b>
 
       <form method="post" action="/activities/<%= @activity.id %>/delete">
-        <b>  <input type="submit" value="Delete"/>
-        </form>
+        <b>  <input type="submit" value="Delete"/></b>
+      </form>
 
 
 
-        </html>
+      </html>
