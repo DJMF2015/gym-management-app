@@ -1,27 +1,29 @@
 <html>
-<center><h2>Bookings</h2></center>
+<center><h2>Bookings</h2>  </center>
 <body>
   <center><a href="/bookings/new">Create Booking</a></center>
+
   <br>
-  <table class="alt">
+<center>  <table class="alt">
     <tr>
       <th>Activity:</th>
       <th>Member firstname</th>
       <th>Member Surname</th>
       <th>Membership</th>
     </tr>
+
+    <% for book in @bookings %>
     <tr>
-      <% for book in @bookings %>
       <td><%= book.activity.session %></td>
       <td> <%= book.member.first_name %></td>
       <td> <%= book.member.last_name %></td>
       <td> <%= book.member.membership %></td>
+
+<td>    <center><form method="post" action="/bookings/<%= book.id %>/delete">
+        <input type="submit" value="Delete"/>
+      </form></center></td>
     </tr>
     <% end %>
-  </table>
-
-  <form method="post" action="/bookings/<%= book.id %>/delete">
-    <input type="submit" value="Delete"/>
-  </form>
+  </table></center>
 </body>
 </html>

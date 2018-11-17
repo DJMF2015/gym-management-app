@@ -1,5 +1,4 @@
-<h3>Activites </h3>
-<br><br>
+<h3>Activities </h3>
 <center><a href='/activities/new'>Add Classes</a></center>
 <hr>
 <center><table class="alt">
@@ -21,14 +20,13 @@
       <td><%= activity.spaces %></td>
       <td><%= activity.duration %></td>
       <td><a href="/activities/<%= activity.id %>/edit">Update</a></td>
-      
+
       <td> <a href="/activities/<%= activity.id %>/show">Show</a></td>
-      <td><form method="post action="/activities/<%= activity.id %>/delete" method="POST">
-        <input type="submit" value="delete" />
+
+      <td><form method="post" action="/activities/<%= activity.id %>/delete">
+        <input type="submit" value="Delete"/>
       </form></td>
     </tr>
-
-
     <% end %>
   </table></center>
   <hr/>

@@ -10,6 +10,6 @@ get '/' do
   erb( :index )
 end
 
-not_found do
-  erb(:error)
+get '/news' do
+  erb( :news )
 end
