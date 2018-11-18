@@ -8,7 +8,6 @@
       <th> Activity: </th>
       <th> Spaces: </th>
       <th> Description: </th>
-      <th> Time: </th>
       <th> Instructor: </th>
       <th> Duration: </th>
     </tr>
@@ -16,16 +15,13 @@
       <td><%= @activity.session %></td>
       <td><%= @activity.spaces %></td>
       <td><%= @activity.description %></td>
-      <td><%= @activity.time_of_day %></td>
-       <td> <%= @instructor %> </td>
+
+      <td> <%= @instructor %> </td>
       <td><%= @activity.duration %></td>
-
-      <td<%= @temp %></td>
-
-
+      <%= @temp %>
 
     </tr></table><br><br>
-     <center><h2> Member  </h2></center>
+    <center><h2> Member  </h2></center>
     <center>
       <% @activity.members.each do |member| %>
       <table class="alt">
@@ -37,7 +33,7 @@
         <% end %>
       </table>
       <br>
-<%= @temp %>
+
       <b><form method="get" action="/activities/<%= @activity.id %>/edit">
         <p><input type='submit' value="Update Class Details"/></p>
       </form></b>

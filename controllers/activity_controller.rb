@@ -35,7 +35,6 @@ get '/activities/:id/show' do  #   SHOW
   @activity = Activity.find( params['id']) # or 'id'?
   @instructor = Activity.random_instructor()
   @temp = Activity.allocate_instructor_time_slots()
-  @next_week = Activity.allocate_next_week()
   erb(:"activities/show")
 end
 
@@ -58,6 +57,21 @@ post '/activities' do  # CREATE
   @activity.save() #'id'
   erb (:"activities/create")
 end
+
+post '/activities/save_image' do
+  @filename = params[:file][:filename]
+  file = params[:file][:tempfile]
+  File.open("./public/#{@filename}", 'wb') do |f|
+    f.write(file.read)
+  end
+  erb (:"activities/:show_photo")
+end
+
+get "/activities/news" do
+  erb (:"activities/:news")
+end
+
+
 
 #DELETE
 post '/activities/:id/delete' do

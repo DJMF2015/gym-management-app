@@ -64,13 +64,12 @@ class Activity
       return classes
     end
 
-    #select 1 random instructor
+    #allocate 1 random instructor
     def self.random_instructor()
-      sql = "SELECT a.instructor FROM ACTIVITIES a order by RANDOM() limit 1"
+      sql = "SELECT a.instructor, a.session FROM ACTIVITIES a ORDER BY RANDOM() limit 1"
       results = SqlRunner.run( sql )
-      return results.first['instructor']
+      return results.first['session']
     end
-
 
     #FIND by id
     def self.find( id )
@@ -104,12 +103,6 @@ class Activity
       future.strftime('%H:%M:%p')
       @time_of_day = future + (60*60*24*7)
       return  @time_of_day.strftime('Class Booked for: %A, %B %C, %G @ %H:%M %p')
-    end
-
-    #helper method to allocate a future day slot 7 days from present to instructor
-    def self.allocate_next_week()
-      @next = Date.today
-      return  @next
     end
 
     #count number of members

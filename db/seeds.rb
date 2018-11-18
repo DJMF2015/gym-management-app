@@ -82,40 +82,6 @@ activity4 = Activity.new({
         })
 
 activity4.save()
-# -----------------------------------
-#
-# instructor1 = Instructor.new({
-#      'instructor_name' => 'Joe Strongarms',
-#      'time_slot' => '09:00-10:00',
-#   })
-#   instructor1.save()
-#    instructor2 = Instructor.new({
-#        'instructor_name' => 'Joe Cotton',
-#        'time_slot' => '09:00-10:00',
-#     })
-#     instructor2.save()
-#
-#    instructor3 = Instructor.new({
-#          'instructor_name' => 'Henry ''The Destoyer'' Hard',
-#          'time_slot' => '09:00-10:00',
-#       })
-#       instructor3.save()
-#    instructor4 = Instructor.new({
-#            'instructor_name' => 'Joe Strongarms',
-#            'time_slot' => '10:00-11:00',
-#         })
-#       instructor4.save()
-#    instructor5 = Instructor.new({
-#              'instructor_name' => 'Emily Hurst',
-#              'time_slot' => '13:00-14:00',
-#           })
-#       instructor5.save()
-#
-#    instructor6 = Instructor.new({
-#                'instructor_name' => 'Magic Bob',
-#                'time_slot' => '13:00-14:00',
-#             })
-#       instructor6.save()
 
 booking1 = Booking.new({
           "members_id" => member1.id,
@@ -170,6 +136,9 @@ booking6.save()
  activity4.classes_available()
 # p  activity3.spaces_left()
 # p activity2.instructor
-p Activity.allocate_instructor_time_slots
+  # Member.premium?()
+ Activity.allocate_instructor_time_slots
+ # p Member.premium?()
+  # p member1.off_peak?()
 binding.pry
 nil

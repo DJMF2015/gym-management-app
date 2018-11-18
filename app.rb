@@ -9,7 +9,3 @@ also_reload( './models/*' )
 get '/' do
   erb( :index )
 end
-
-get '/news' do
-  erb( :news )
-end

@@ -57,6 +57,7 @@ post '/members/:id/delete' do
   redirect to("/members")
 end
 
+
 not_found do
     erb(:error)
 end

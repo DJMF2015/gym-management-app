@@ -60,17 +60,6 @@ class Booking
     return Activity.new( results.first )
   end
 
-  def premium?
-    sql = "SELECT m.id, m.membership from members m WHERE id = $1"
-    values= [@members_id]
-    results = SqlRunner.run(sql, values)
-    return Member.new(results.new)
-  end
-
- # def check_membership()
- #  type = premium?()
- #  # if Member.membership ==
- # end
 
   #Delete by ID
   def self.delete(id)

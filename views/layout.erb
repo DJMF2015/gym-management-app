@@ -10,9 +10,9 @@
 
 </head>
 <body>
-  <nav>
+<center>  <nav>
     <ul id="nav">
-      <li>
+         <li>
         <a href="/members">Members</a>
       </li>
       <li>
@@ -21,19 +21,17 @@
       <li>
         <a href="/bookings">Bookings</a>
       </li>
-      <li>
-        <a href="/news">News</a>
-      </li>
-    </ul>
-  </nav>
 
-  <footer>
-    <div class="footer">
-      Gym Management: <%= Date.today.year %> David Fulton.
-    </div>
-  </footer>
+      </ul>
+    </nav></center>
 
-  <%= yield %>
+    <footer>
+      <div class="footer">
+        Gym Management: <%= Date.today.year %> David Fulton.
+      </div>
+    </footer>
 
-</body>
-</html>
+    <%= yield %>
+
+  </body>
+  </html>

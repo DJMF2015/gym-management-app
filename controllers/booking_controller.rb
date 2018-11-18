@@ -18,6 +18,7 @@ end
 get '/bookings/new' do
   @members = Member.all
   @activities = Activity.activities_with_spaces()
+  @membership_type = Member.check_memberships()
   erb(:"bookings/new")
 end
 

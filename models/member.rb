@@ -1,4 +1,6 @@
 require_relative( '../db/sql_runner' )
+require 'date'
+require 'time'
 
 class Member
 
@@ -9,7 +11,7 @@ class Member
     @first_name = options['first_name']
     @last_name = options['last_name']
     @membership = options['membership']
-    # @max_slots = 10 #max no. of individuals per class
+
   end
 
   #CREATE
@@ -73,7 +75,28 @@ class Member
       return  result.map { |session| Activity.new( session) }
     end
 
+    def self.premium?()
+      sql = "SELECT m.* from members m where membership  like '%pr%' " ;
+      results = SqlRunner.run(sql)
+      members = map_items(results)
+      return members
+    end
 
+    def on_peak?()
+      on_peak  =  Time.parse "17:00pm"
+      on_peak_am  =  Time.parse "09:00am"
+      current_time = Time.now
+      if current_time > on_peak || current_time < on_peak_am
+        return true
+      else
+        return false
+      end
+    end
+
+    def self.check_memberships()
+      all = premium?()
+      return all.find_all { |members| members.on_peak?() }
+    end
     #Delete by ID
     def self.delete(id)
       sql = "DELETE FROM members where id = $1"
@@ -91,4 +114,4 @@ class Member
       return results.map { |member|  Member.new(member) }
     end
 
-end
+  end
