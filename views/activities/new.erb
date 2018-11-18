@@ -4,8 +4,8 @@
 <center><form method="POST" action="/activities">
 
 
-  <label for="session">Select Activity:</label>
-  <select name="session" id="session" required="required" >
+  <label for="session" class = "form_fields">Select Activity:</label>
+  <select name="session" id="session" required="required"  class = "form_fields">
     <% @activities.each do |sess| %>
     <option value=<%= sess.id %></option>
     <%= sess.session %> </option>
@@ -13,21 +13,21 @@
   </select>
 
 
-  <label for="spaces">Spaces:</label>
+  <label for="spaces" class = "form_fields">Spaces:</label>
   <br><br>
   <input type="number" name="spaces" id="spaces" required="required"  min="0"/>
   <br>
-  <label for="description">Description:</label>
+  <label for="description" class = "form_fields">Description:</label>
   <input type="text" name="description" id="description" maxlength="30" />
 
-  <label for="duration">Duration:</label><br>
+  <label for="duration" class = "form_fields">Duration:</label><br>
   <input type="number" name="duration" id="duration" required="required" min="0"/>
   <br><br>
-  <label for="time_of_day">Time :</label><br>
+  <label for="time_of_day" class = "form_fields">Time :</label><br>
   <input type="time" name="time_of_day" id="time_of_day" required="required"/>
 
 
-  <input type="submit" value="Add Class"/>
+  <input type="submit" value="Add Class"  />
 
 </form></center>
 </html>

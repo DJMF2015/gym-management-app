@@ -9,11 +9,11 @@
   <div>
     <form method="post" action="/activities/<%= @activity.id %>">
 
-      <label for="session">Activity:</label>
+      <label for="session" class = "form_fields">Activity:</label>
       <input type="text" name="session" id="session"
       value="<%= @activity.session %>"/>
 
-      <label for="spaces">Spaces:</label>
+      <label for="spaces class = "form_fields"">Spaces:</label>
       <input
       type="number"
       name="spaces"
@@ -21,11 +21,11 @@
       value="<%= @activity.spaces %>"
       />
 
-      <label for="description">Description:</label>
+      <label for="description" class = "form_fields">Description:</label>
       <input type="text" name="description" id="description"
       value="<%= @activity.description %>"/>
 
-      <label for="instructor">Instructor:</label>
+      <label for="instructor" class = "form_fields">Instructor:</label>
       <select id= "instructor" name="instructor">
         <% @instructor.each do |instruct| %>
         <%= @activity.instructor %>"
@@ -33,7 +33,7 @@
         <% end %>
       </select>
 
-      <label for="time_of_day">Time:</label>
+      <label for="time_of_day" class = "form_fields">Time:</label>
       <input
       type="text"
       name="time_of_day"
@@ -41,14 +41,14 @@
       value="<%= @activity.time_of_day %>"
       />
 
-      <label for="duration">Duration:</label>
+      <label for="duration" class = "form_fields">Duration:</label>
       <input
       type="text"
       name="duration"
       id="duration"  min="0"
       value="<%= @activity.duration %>"
       />
-      <input type='submit' value="Update "/>
+      <input type='submit' value="Update " class = "form_fields"/>
     </form>
   </div>
 </body>

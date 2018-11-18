@@ -60,7 +60,6 @@ class Booking
     return Activity.new( results.first )
   end
 
-
   #Delete by ID
   def self.delete(id)
     sql = "DELETE FROM bookings where id = $1"

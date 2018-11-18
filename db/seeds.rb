@@ -3,6 +3,7 @@ require_relative( "../models/activity.rb" )
 require_relative( "../models/booking.rb" )
 require("pry-byebug")
 # -----------------------------------
+#seeds.rb file
 
 Booking.delete_all()
 Member.delete_all()
@@ -134,11 +135,12 @@ booking6.save()
  booking1.activity()
  activity1.count_members
  activity4.classes_available()
-# p  activity3.spaces_left()
-# p activity2.instructor
-  # Member.premium?()
- Activity.allocate_instructor_time_slots
+ # p activity3.spaces_left()
+ # p activity2.instructor
+ # Member.premium?()
+ # Activity.allocate_instructor_time_slots
  # p Member.premium?()
-  # p member1.off_peak?()
+ # p member1.off_peak?()
+
 binding.pry
 nil

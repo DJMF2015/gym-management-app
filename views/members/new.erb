@@ -1,22 +1,22 @@
 <html>
 <head>
-  </head>
+</head>
 <h1>Add Member</h1>
 <hr><center>
-<form method="POST" action="/members" id="new_form">
+  <form method="POST" action="/members" id="new_form">
 
-  <label for="first_name">First Name:</label>
-  <input type="text" name="first_name" id="first_name" maxlength="30"/>
+    <label for="first_name" class = "form_fields">First Name:</label>
+    <input type="text" name="first_name" id="first_name" maxlength="30"/>
 
-  <label for="last_name">Last Name:</label>
-  <input type="text" name="last_name" id="last_name" maxlength="30"/>
+    <label for="last_name" class = "form_fields">Last Name:</label>
+    <input type="text" name="last_name" id="last_name" maxlength="30"/>
 
-  <label for="membership">Membership:</label>
-  <select name="membership"  id="membership">
-  <option value="Standard">Standard</option>
-  <option value="Premium">Premium</option>
- </select>
+    <label for="membership" class = "form_fields"">Membership:</label>
+    <select name="membership"  id="membership">
+      <option value="Standard">Standard</option>
+      <option value="Premium">Premium</option>
+    </select>
 
- <input type="submit" form="new_form">Add Member</input>
-</form></center>
-</html>
+    <input type="submit" form="new_form">Add Member</input>
+  </form></center>
+  </html>

@@ -9,21 +9,20 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
-input[type=submit] {
-
+  input[type=submit] {
     color: white;
-    padding: 16px 38px;
-    margin: 65px 0;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #b91306;
-    position: relative;
-    bottom: 0;
-    text-align: center;
-    font-size: 14px;
-    font-family:  sans-serif;
-}
+      padding: 10px 10px 5px 5px;
+      width: 160px;
+/*       margin: 0px 10px 10px 55px; */
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #d25850;
+      position: relative;
+       bottom: 0;
+       text-align: center;
+       font-size: 14px;
+       font-family: sans-serif;
+   }
 
 input[type=submit]:hover {
     background-color: #ffc107;

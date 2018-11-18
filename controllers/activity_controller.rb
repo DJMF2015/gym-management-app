@@ -71,8 +71,6 @@ get "/activities/news" do
   erb (:"activities/:news")
 end
 
-
-
 #DELETE
 post '/activities/:id/delete' do
   Activity.delete(params[:id])

@@ -11,7 +11,6 @@ class Member
     @first_name = options['first_name']
     @last_name = options['last_name']
     @membership = options['membership']
-
   end
 
   #CREATE
@@ -75,6 +74,7 @@ class Member
       return  result.map { |session| Activity.new( session) }
     end
 
+    #return all members whith prmium membership
     def self.premium?()
       sql = "SELECT m.* from members m where membership  like '%pr%' " ;
       results = SqlRunner.run(sql)
@@ -82,6 +82,7 @@ class Member
       return members
     end
 
+    # Helper method return true if time is 'on-peak' after 5 pm or before 9am
     def on_peak?()
       on_peak  =  Time.parse "17:00pm"
       on_peak_am  =  Time.parse "09:00am"
@@ -93,10 +94,12 @@ class Member
       end
     end
 
+    #find all premium members and return if 'eligible' to book for on-peak hours
     def self.check_memberships()
       all = premium?()
       return all.find_all { |members| members.on_peak?() }
     end
+
     #Delete by ID
     def self.delete(id)
       sql = "DELETE FROM members where id = $1"

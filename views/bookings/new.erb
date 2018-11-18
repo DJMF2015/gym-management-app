@@ -3,9 +3,10 @@
 <hr>
 <body>
   <form action="/bookings" method="post">
-    <div>
-      <h3>
-        <label for="members_id">Select Member:</label>
+
+    <h3>
+      <div>
+        <label for="members_id" class = "form_fields">Select Member:</label>
         <select name="members_id" id="members_id">
           <% @members.each do |member| %>
           <option value=<%= member.id %></option>
@@ -13,23 +14,26 @@
           <% end %>
         </select>
       </h3>
-    </div>
-    <div>
-      <h3>
-        <label for="activities_id">Select Activity:</label>
-        <select name="activities_id" id="activities_id">
-          <% @activities.each do |activity| %>
 
-          <option value=<%= activity.id %></option>
+      <div>
+        <h3>
+          <div>
+            <label for="activities_id" class = "form_fields">Select Activity:</label>
+            <select name="activities_id" id="activities_id">
+              <% @activities.each do |activity| %>
 
-          <%= activity.session %>
-          <% end %>
-        </select>
-      </h3>
-    </div>
-    <hr>
-    <br>
-    <center>  <input type="submit" value="Submit Booking"></center>
-  </form>
-</body>
-</html>
+              <option value=<%= activity.id %></option>
+
+              <%= activity.session %>
+              <% end %>
+            </select>
+          </div>
+        </h3>
+      </div>
+
+      <hr>
+      <br>
+      <center>  <input type="submit" value="Submit Booking"></center>
+    </form>
+  </body>
+  </html>

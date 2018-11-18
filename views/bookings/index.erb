@@ -3,8 +3,8 @@
 <body>
   <center><a href="/bookings/new">Create Booking</a></center>
 
-  <br>
 <center>  <table class="alt">
+     <div class = "form_fields">
     <tr>
       <th>Activity:</th>
       <th>Member firstname</th>
@@ -20,10 +20,11 @@
       <td> <%= book.member.membership %></td>
 
 <td>    <center><form method="post" action="/bookings/<%= book.id %>/delete">
+
         <input type="submit" value="Delete"/>
-      </form></center></td>
+      </form></center></td></div>
     </tr>
     <% end %>
-  </table></center>
+  </table></center>  <div>
 </body>
 </html>
