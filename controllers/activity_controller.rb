@@ -15,7 +15,6 @@ get '/' do
   erb(:index)
 end
 
-
 #FIND ALL
 get '/activities' do
   @activities = Activity.all
@@ -56,15 +55,6 @@ post '/activities' do  # CREATE
   @activity = Activity.new(params)
   @activity.save() #'id'
   erb (:"activities/create")
-end
-
-post '/activities/save_image' do
-  @filename = params[:file][:filename]
-  file = params[:file][:tempfile]
-  File.open("./public/#{@filename}", 'wb') do |f|
-    f.write(file.read)
-  end
-  erb (:"activities/:show_photo")
 end
 
 get "/activities/news" do

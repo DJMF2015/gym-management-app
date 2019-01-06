@@ -76,7 +76,7 @@ class Member
 
     #return all members whith prmium membership
     def self.premium?()
-      sql = "SELECT m.* from members m where membership  like '%pr%' " ;
+      sql = "SELECT m.* from members m where membership like '%st%' " ;
       results = SqlRunner.run(sql)
       members = map_items(results)
       return members
@@ -88,9 +88,9 @@ class Member
       on_peak_am  =  Time.parse "09:00am"
       current_time = Time.now
       if current_time > on_peak || current_time < on_peak_am
-        return true
-      else
         return false
+      else
+        return true
       end
     end
 

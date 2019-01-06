@@ -3,7 +3,7 @@ input[type=text], select {
     padding: 18px 8px ;
     margin: 18px 0;
     display: inline-block;
-    border: 2px solid #ccc;
+    border: 2px solid #a09c9c;
     align-items: flex-start;
     border-radius: 10px;
     box-sizing: border-box;
@@ -20,17 +20,11 @@ input[type=text], select {
       position: relative;
        bottom: 0;
        text-align: center;
-       font-size: 14px;
+       font-size: 16px;
        font-family: sans-serif;
    }
 
 input[type=submit]:hover {
     background-color: #ffc107;
 
-}
-
-div {
-    border-radius: 2px;
-    background-color: #f2f2f2;
-    padding: 15px;
 }

@@ -2,12 +2,12 @@
 <h1>Bookings</h1>
 <hr>
 <body>
-  <form action="/bookings" method="post">
+<center>  <form action="/bookings" method="post">
 
     <h3>
       <div>
         <label for="members_id" class = "form_fields">Select Member:</label>
-        <select name="members_id" id="members_id">
+        <center>     <select name="members_id" id="members_id">  </center>   
           <% @members.each do |member| %>
           <option value=<%= member.id %></option>
           <%= member.first_name %> <%= member.last_name %>
@@ -19,21 +19,20 @@
         <h3>
           <div>
             <label for="activities_id" class = "form_fields">Select Activity:</label>
-            <select name="activities_id" id="activities_id">
+      <center>      <select name="activities_id" id="activities_id">
               <% @activities.each do |activity| %>
 
               <option value=<%= activity.id %></option>
 
               <%= activity.session %>
               <% end %>
-            </select>
+            </select></center>
           </div>
         </h3>
       </div>
 
-      <hr>
       <br>
       <center>  <input type="submit" value="Submit Booking"></center>
-    </form>
+    </form></center>
   </body>
   </html>

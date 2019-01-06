@@ -2,17 +2,19 @@ body {
     font-family: Arial;
     font-size: 14px;
 
+
 }
 
 form {
-    width: 290px;
-    padding: 15px 300px 15px 300px;
-    border: 1px solid #ccc;
+    width: 50%;
+    float: center;
+    margin: auto;
 
 }
 
 label {
     display: block;
+    
 }
 
 input, select {
@@ -21,8 +23,5 @@ input, select {
     padding: 4px;
     border: 1px solid #aaa;
     margin-bottom: 1em; /*For vertical spacing*/
-    /*box sizing properties*/
-    box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
+
 }
