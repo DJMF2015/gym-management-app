@@ -1,39 +1,37 @@
-## Project - Web Programming with Ruby
-Over the next week you will build an app to consolidate and expand on everything you have learned:
+## Project - Gym Management Web Application
 
-- Object oriented programming with Ruby
-- Test Driven Development
-- Web Programming (REST, MVC)
-- Interacting with a PostgreSQL database (CRUD)
-- Rules
-
-## The project must be built using only:
+### This project uses the following technologies:
 
 HTML / CSS
 Ruby
 Sinatra
 PostgreSQL and the PG gem
-It must NOT use:
 
-Any Object Relational Mapper (e.g. ActiveRecord)
-JavaScript. At all. Don't even think about it.
-Any pre-built CSS libraries, such as Bootstrap.
-Authentication. Assume that the user already has secure access to the app.
+To run the following application, the requirments are specified below with instructions on how to run the application.
 
-Make lots of little (but sensible!) git commits. The number of commits in your final submission is one of the criteria your work will be judged on.
+### Required:
+- Ruby gem
+- sinatra gem
+- PostgreSql & PG Gem
 
-### Briefs
-These briefs detail what is expected of you, including an MVP. Note that the MVP is the Minimum Viable Product. You are strongly encouraged to go beyond these specifications, and some possible extensions are provided.
+#### Instructions:
+From inside the terminal: 
+1. createdb gym
+2. psql -d gym -f db/gym.sql
+3. From within the 'db' folder: ruby db/seed.rb
+4. Finally... 
+ruby app.rb will run the application on the localhost. Open a browser and in the address input localhost:4567/
 
-Talk through your ideas with an instructor during the planning process, and before you begin coding.
+### Objective: 
+To develop a content management style platform for a local gym to manage their memberships and the various classes they run. It should allow a manager to make bookings for a member and perform the following requirements.
 
 ## MVP
- - [x]  The app should allow the gym to create / edit / delete members Y
- - [x]  The app should allow the gym to create / edit / delete classes Y
- - [x]  The app should show a list of all upcoming classes Y
- - [X]  The app should allow the gym to add members to specific classes Y
- - [X]  The app should show all members that are registered for a particular class Y
- -
+ - [x]  The app should allow the gym to create / edit / delete members 
+ - [x]  The app should allow the gym to create / edit / delete classes 
+ - [x]  The app should show a list of all upcoming classes 
+ - [X]  The app should allow the gym to add members to specific classes 
+ - [X]  The app should show all members that are registered for a particular class 
+ 
 ## Possible Extensions
  - [x] Classes could have a maximum capacity, and users can only be added while there is space remaining. Y
- - [x] The gym could be able to give its members Premium or Standard membership. Standard members can only be signed up for classes during off-peak hours. Y
+ - [x] The gym could be able to give its members Premium or Standard membership. Standard members can only be signed up for classes during off-peak hours. 
