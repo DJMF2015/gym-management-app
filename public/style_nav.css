@@ -6,6 +6,7 @@
 }
 body{
   font-family: 'Ubuntu';font-size: 18px;
+  margin: 0;
 }
 h1, h2, h3{
   font-size: 20px;
@@ -24,6 +25,7 @@ nav {
 
 nav ul{
   list-style: none;
+  display: flex;
 
 }
 nav li {

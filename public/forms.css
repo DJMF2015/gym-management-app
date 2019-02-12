@@ -6,7 +6,7 @@ body {
 }
 
 form {
-    width: 50%;
+    width: 75%;
     float: center;
     margin: auto;
 
@@ -14,14 +14,14 @@ form {
 
 label {
     display: block;
-    
+
 }
 
-input, select {
+/* input, select {
     display: block;
     width: 250px;
     padding: 4px;
     border: 1px solid #aaa;
     margin-bottom: 1em; /*For vertical spacing*/
 
-}
+} */

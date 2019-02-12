@@ -7,7 +7,7 @@
     <h3>
       <div>
         <label for="members_id" class = "form_fields">Select Member:</label>
-        <center>     <select name="members_id" id="members_id">  </center>   
+        <center>     <select name="members_id" id="members_id">  </center>
           <% @members.each do |member| %>
           <option value=<%= member.id %></option>
           <%= member.first_name %> <%= member.last_name %>
@@ -31,7 +31,7 @@
         </h3>
       </div>
 
-      <br>
+    
       <center>  <input type="submit" value="Submit Booking"></center>
     </form></center>
   </body>
