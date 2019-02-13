@@ -1,27 +1,31 @@
 body {
-    font-family: Arial;
-    font-size: 14px;
+  font-family: Arial;
+  font-size: 14px;
 
 
 }
 
 form {
-    width: 75%;
-    float: center;
-    margin: auto;
+  width: 90%;
+  /* float: center; */
+  margin: 5%;
 
 }
 
 label {
-    display: block;
+  display: block;
 
 }
 
-/* input, select {
-    display: block;
-    width: 250px;
-    padding: 4px;
-    border: 1px solid #aaa;
-    margin-bottom: 1em; /*For vertical spacing*/
+input {
+  /* margin: auto; */
+  width: 80%;
+  padding: 4px;
+  border: 1px solid #aaa;
+  display: block;
 
-} */
+}
+select{
+  display:block;
+  /* margin-bottom: 3em; /*For vertical spacing*/ */
+}
