@@ -134,7 +134,7 @@ booking6.save()
  booking1.member()
  booking1.activity()
  activity1.count_members
- activity4.classes_available()
+ activity4.class_full?()
  # p activity3.spaces_left()
  # p activity2.instructor
  # Member.premium?()

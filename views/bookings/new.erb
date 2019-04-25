@@ -19,14 +19,14 @@
         <h3>
           <div>
             <label for="activities_id" class = "form_fields">Select Activity:</label>
-            <center>      <select name="activities_id" id="activities_id">
+            <center>  <select name="activities_id" id="activities_id"></center>
               <% @activities.each do |activity| %>
 
               <option value=<%= activity.id %></option>
 
               <%= activity.session %>
               <% end %>
-            </select></center>
+            </select>
           </div>
         </h3>
       </div>

@@ -3,28 +3,30 @@
 <body>
   <center><a href="/bookings/new">Create Booking</a></center>
 
-<center>  <table class="alt">
-     <div class = "form_fields">
-    <tr>
-      <th>Activity:</th>
-      <th>Member firstname</th>
-      <th>Member Surname</th>
-      <th>Membership</th>
-    </tr>
+  <center>  <table class="alt">
+    <div class = "form_fields">
+      <tr>
+        <th>Activity:</th>
+        <th>Member firstname</th>
+        <th>Member Surname</th>
+        <th>Membership</th>
+        <!-- <th>Membership</th> -->
+      </tr>
 
-    <% for book in @bookings %>
-    <tr>
-      <td><%= book.activity.session %></td>
-      <td> <%= book.member.first_name %></td>
-      <td> <%= book.member.last_name %></td>
-      <td> <%= book.member.membership %></td>
+      <% for book in @bookings %>
+      <tr>
+        <td><%= book.activity.session %></td>
+        <td> <%= book.member.first_name %></td>
+        <td> <%= book.member.last_name %></td>
+        <td> <%= book.member.membership %></td>
+        <td> <%=  %></td>
 
-<td>    <center><form method="post" action="/bookings/<%= book.id %>/delete">
+        <td>    <center><form method="post" action="/bookings/<%= book.id %>/delete">
 
-        <input type="submit" value="Delete"/>
-      </form></center></td></div>
-    <!-- </tr> -->
-    <% end %>
-  </table></center>  <div>
-</body>
-</html>
+          <input type="submit" value="Delete"/>
+        </form></center></td></div>
+        <!-- </tr> -->
+        <% end %>
+      </table></center>  <div>
+      </body>
+      </html>

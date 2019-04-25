@@ -107,12 +107,12 @@ class Activity
 
     #count number of members
     def count_members()
-      return members().count #count method returning no of members from sql query (above
+      members().count #count method returning no of members from sql query (above
     end
 
 
-    def classes_available()
-      if @spaces > members().count
+    def class_full?()
+      if count_members() >= @spaces
         return true
       else
         return false
@@ -121,7 +121,16 @@ class Activity
 
     def self.activities_with_spaces()
       all = all()
-      return  all.find_all { |activity| activity.classes_available() }
+      return all.find_all { |activity| activity.remaining_spaces() }
+    end
+
+    def remaining_spaces()
+      empty_spaces = @spaces - count_members
+      if   empty_spaces  > 0
+        return   empty_spaces
+      else
+        return "No Space.Class Full"
+      end
     end
 
     #Delete by ID
