@@ -9,15 +9,6 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
-.btn{
-  padding: 18px 8px ;
-  margin: 18px 0;
-  display: inline-block;
-  border: 2px solid #a09c9c;
-  align-items: flex-start;
-  border-radius: 10px;
-  box-sizing: border-box;
-}
 
   input[type=submit] {
     color: white;
@@ -36,5 +27,23 @@ input[type=text], select {
 
 input[type=submit]:hover {
     background-color: #ffc107;
+
+}
+
+.btn{
+  padding: 18px 8px ;
+  margin: 18px 0;
+  display: inline-block;
+  border: 2px solid #a09c9c;
+  align-items: flex-start;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.btn:hover {background-color: #3e8e41}
+
+.btn:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 
 }

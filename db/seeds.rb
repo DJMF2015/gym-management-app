@@ -42,7 +42,7 @@ member4.save()
 # -----------------------------------
 activity1 = Activity.new({
   'session' => 'Circuits',
-  'spaces' => 10,
+  'spaces' => 5,
   "description" => "These classes are for anyone that loves music and energy.",
  'instructor' => 'Joe Strongarms',
   "time_of_day" => '11:00',
@@ -54,7 +54,7 @@ activity1.save();
 
 activity2 = Activity.new({
     'session' => 'Spin',
-    'spaces' => 10,
+    'spaces' => 5,
     "description" => "An intensive spin-bike class designed to work your whole body!",
        'instructor' => 'Joe Cotton',
       "time_of_day" => '22:00',
@@ -65,7 +65,7 @@ activity2.save()
 
  activity3 = Activity.new({
       'session' => 'Pilates',
-      'spaces' => 15,
+      'spaces' => 8,
       "description" => "physical conditioning involving low-impact exercises & stretches",
        'instructor' => 'Emily Hurst',
        "time_of_day" => '09:00',
@@ -75,7 +75,7 @@ activity3.save()
 
 activity4 = Activity.new({
         'session' => 'PurePump',
-        'spaces' => 3,
+        'spaces' => 6,
         "description" => "designed to develop your full body STRENGTH!",
          'instructor' => 'Magic Bob',
          "time_of_day" => '14:30',

@@ -1,7 +1,7 @@
 body {
   font-family: Arial;
   font-size: 14px;
-
+  text-shadow: 2px 2px 4px #000000;
 
 }
 
@@ -9,6 +9,7 @@ form {
   width: 90%;
   /* float: center; */
   margin: 5%;
+  text-shadow: 2px 2px 4px #000000;
 
 }
 

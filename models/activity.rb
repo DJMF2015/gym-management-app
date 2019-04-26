@@ -1,3 +1,4 @@
+
 require_relative( '../db/sql_runner' )
 require 'Date'
 
@@ -126,13 +127,21 @@ class Activity
 
     def remaining_spaces()
       empty_spaces = @spaces - count_members
-      if   empty_spaces  > 0
-        return   empty_spaces
+      if  empty_spaces  > 0
+        return  empty_spaces
       else
         return "No Space.Class Full"
       end
     end
 
+    def css_display()
+      css_add = "background-color: orange;"
+      if @spaces > 0
+        return  css_add
+      else
+        return "background-color: red;"
+      end
+    end
     #Delete by ID
     def self.delete(id)
       sql = "DELETE FROM activities where id = $1"
