@@ -22,7 +22,7 @@ From inside the terminal:
 4. Finally...
 ruby app.rb will run the application on the localhost. Open a browser and in the address input localhost:4567/
 
-### Objective:
+### Requirement:
 To develop a content management style platform for a local gym to manage their memberships and the various classes they run. It should allow a manager to make bookings for a member and perform the following requirements.
 
 ## MVP
@@ -32,7 +32,7 @@ To develop a content management style platform for a local gym to manage their m
  - [X]  The app should allow the gym to add members to specific classes
  - [X]  The app should show all members that are registered for a particular class
 
-## Possible Extensions
+## Extensions
  - [x] Classes could have a maximum capacity, and users can only be added while there is space remaining. Y
  - [x] The gym could be able to give its members Premium or Standard membership. Standard members can only be signed up for classes during off-peak hours.
 
